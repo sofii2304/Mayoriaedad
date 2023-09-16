@@ -1,5 +1,5 @@
 # Crea una lista de 5 nombres de frutas
-frutas = ["manzana", "banana", "naranja", "fresa", "kiwi"]
+frutas = ["lulo", "sandia", "kiwi", "mora", "maracuya"]
 
 # Utiliza un ciclo for para imprimir cada nombre de la lista
 print("Nombres de frutas:")
