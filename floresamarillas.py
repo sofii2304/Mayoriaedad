@@ -1,74 +1,64 @@
-import time
-import random
-
-# Función para imprimir un huevo
-def print_egg():
-    egg = """
-         ,ggg,
-       ,g@@@@@@g,
-     ,g@@@@@@@@@@g,
-   ,@@@@@@@@@@@@@@@g,
-  @@@@@@@@@@@@@@@@@@g
- @@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@    _
-@@@@@@@@@@@@@@@@@@@@  .(_)
-@@@@@@@@@@@@@@@@@@   /   \
-@@@@@@@@@@@@@@@@@   |     |
-@@@@@@@@@@@@@@@@'   \    |
-@@@@@@@@@@@@@@@'     |   /
-@@@@@@@@@@@@@@'       |._|
-@@@@@@@@@@@@@'
-
-"""
-    print(egg)
-
-# Función para imprimir la gallina
-def print_chicken():
-    chicken = """
-   _
-   \( )
-    | |
-  \ | |
-  / | |
- / / | |
- | | | |
- | | | |
- / | | \
- | | | |
-/  | |  \
-| / | \  \
-||| | ||| |
-| | | | | |
- \ | | | |
-   | | | |
-  / | | \ \
- | | | | | |
- | | | | | |
- | | | | | |
-   | | | |
-   / | | \
-   | | | |
-   \ | | /
-     | |
-    |   |
-    |   |
-    |   |
-    |   |
-    |___|
-
-"""
-    print(chicken)
-
-# Función principal
-def main():
-    print("¡La gallina está poniendo huevos!\n")
-
-    for _ in range(6):  # Poner al menos 6 huevos
-        time.sleep(1)  # Esperar 1 segundo antes de poner el huevo
-        print_chicken()
-        time.sleep(1)  # Esperar 1 segundo antes de imprimir el huevo
-        print_egg()
-        print("\n")
-
-if __name__ == "__main__":
-    main()
+import turtle
+ 
+screen = turtle.Screen()
+screen.bgcolor("skyblue")
+t = turtle.Turtle()
+t.shape("turtle")
+t.color("brown")
+t.speed(0)
+ 
+def dibujar_petal(t, radio):
+    t.pensize(2)
+    t.pencolor("black")
+    t.color("yellow")
+    t.begin_fill()
+    t.circle(radio, 60)
+    t.left(120)
+    t.circle(radio, 60)
+    t.end_fill()
+    t.pencolor("brown")
+    t.pensize(1)
+ 
+def dibujar_girasol():
+    radio = 100
+ 
+    t.penup()
+    t.goto(0, -100)
+    t.pendown()
+    t.pensize(8)
+    t.left(90)
+    t.color("green")
+    t.forward(180)
+ 
+    for _ in range(18):
+        dibujar_petal(t, radio)
+        t.right(20)
+ 
+    t.penup()
+    t.goto(8, 80)
+    t.pendown()
+    t.color("brown")
+    t.begin_fill()
+    t.circle(10)
+    t.end_fill()
+ 
+t.penup()
+t.goto(-400, -100)
+t.pendown()
+t.color("green")
+t.begin_fill()
+for _ in range(2):
+    t.forward(800)
+    t.right(90)
+    t.forward(200)
+    t.right(90)
+t.end_fill()
+ 
+dibujar_girasol()
+t.penup()
+t.goto(0, 200)
+t.color("red")
+t.write("Gracias por ser parte de mi vida", align="center", font=("Arial", 6, "bold"))
+ 
+t.hideturtle()
+turtle.done()
