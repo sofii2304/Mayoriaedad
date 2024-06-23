@@ -5,3 +5,9 @@ cadena = input("Por favor, ingresa una cadena de caracteres: ")
 print("Cada letra en una línea distinta:")
 for letra in cadena:
     print(letra)
+
+
+
+
+
+
